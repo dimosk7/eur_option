@@ -57,7 +57,15 @@ public class Option {
 	}
 		
 	public static void main(String[] args) {
-
+		
+		System.out.println("Enter values for spot price, exercise price, risk-free rate, volatility and months to maturity :");
+		Scanner scan = new Scanner(System.in);
+		double[] val = new double[5];
+		for (int i = 0; i < val.length; i++) {
+			val[i] = scan.nextDouble();
+		}
+		scan.close();
+		Option option = new Option(val[0], val[1], val[2], val[3], val[4]);
 		Option option = new Option(45, 55, 0.05, 0.3, 6);
 		option.getInfo();
 		System.out.println("Black–Scholes price is : " + option.getBlackPrice());
