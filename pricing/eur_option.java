@@ -66,7 +66,6 @@ public class Option {
 		}
 		scan.close();
 		Option option = new Option(val[0], val[1], val[2], val[3], val[4]);
-		Option option = new Option(45, 55, 0.05, 0.3, 6);
 		option.getInfo();
 		System.out.println("Black–Scholes price is : " + option.getBlackPrice());
 		System.out.println("Monte Carlo price is : " + option.getMontePrice());		
