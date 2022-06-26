@@ -59,7 +59,7 @@ public class Option {
 		
 	public static void main(String[] args) {
 		
-		System.out.println("Give values for spot price, exercise price, risk-free rate and months to maturity :");
+		System.out.println("Enter values for spot price, exercise price, risk-free rate and months to maturity :");
 		Scanner scan = new Scanner(System.in);
 		double[] val = new double[4];
 		for (int i = 0; i < val.length; i++) {
