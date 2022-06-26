@@ -58,17 +58,26 @@ public class Option {
 		
 	public static void main(String[] args) {
 		
-		System.out.println("Enter values for spot price, exercise price, risk-free rate, volatility and months to maturity :");
+		System.out.println("Give values for spot price, exercise price, risk-free rate and months to maturity :");
 		Scanner scan = new Scanner(System.in);
-		double[] val = new double[5];
+		double[] val = new double[4];
 		for (int i = 0; i < val.length; i++) {
 			val[i] = scan.nextDouble();
 		}
+		scan.nextLine();
+		System.out.println("To compute historical volatility, enter company's ticker : ");
+		String ticker = scan.nextLine();
+		Sql sql = new Sql();
+		double vol = sql.getVol(ticker);
+		if (vol == 0) {
+			System.out.println("Enter a value for volatility : ");
+			vol = scan.nextDouble();
+		}
 		scan.close();
-		Option option = new Option(val[0], val[1], val[2], val[3], val[4]);
+		Option option = new Option(val[0], val[1], val[2], vol, val[3]);
 		option.getInfo();
 		System.out.println("Black–Scholes price is : " + option.getBlackPrice());
-		System.out.println("Monte Carlo price is : " + option.getMontePrice());		
+		System.out.println("Monte Carlo price is : " + option.getMontePrice());	
 	}
 
 }
