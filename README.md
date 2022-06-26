@@ -1,3 +1,3 @@
 # eur_option
 
-European call option pricing with Black-Scholes and Monte Carlo simulation
+The purpose of this project is to calculate European call options price with Black-Scholes and Monte Carlo simulation. These models have five key inputs : spot price of the underlying stock, exercise price, risk-free rate, time to maturity and volatility. Spot price, exercise price, risk-free rate and time to maturity are available in the market but volatility has to be estimated by the investor/trader. To solve this issue, our programm requires the user to enter stock symbol (ticker) and computes volatility for the specific stock from historical prices stored in a SQL database(Connection to the database is created via JDBC).
