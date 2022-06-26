@@ -1,5 +1,6 @@
 import org.apache.commons.math3.distribution.NormalDistribution; 
-import  java.util.Random;
+import java.util.*;
+import options.Sql;
 
 
 public class Option {
