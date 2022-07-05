@@ -15,9 +15,9 @@ public class Sql
 		{
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			String url = "jdbc:mysql://localhost:3306/stocks";
-		    String user = "root";
-		    String pw = "dimosk"; 
-		    con = DriverManager.getConnection(url, user, pw);
+		        String user = "root";
+		        String pw = "dimosk"; 
+		        con = DriverManager.getConnection(url, user, pw);
 			stat = con.createStatement();
 			String query = String.format("SELECT STDDEV(`Daily Returns`)*sqrt(252) volatility, count(*) count\r\n"
 					+ "FROM "
